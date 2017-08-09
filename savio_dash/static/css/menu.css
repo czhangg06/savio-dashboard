@@ -1,0 +1,23 @@
+#title {
+	font-weight: 100;
+}
+
+#account1-select {
+	margin-top: 100px;
+	margin-bottom: 100px;
+	margin-left: 50px;
+	list-style-type: none;
+}
+
+#account1-select-icon {
+	border: 2px solid gray;
+	text-align: center;
+	color: black;
+	font-size: 150px;
+	font-weight: 200;
+}
+
+#account1-select a {
+	color: black;
+	text-decoration: none;
+}

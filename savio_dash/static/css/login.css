@@ -1,0 +1,42 @@
+h1 {
+	color: white;
+    font-size: 80px;
+    float: left;
+    padding-top: 230px;
+    padding-left: 100px;
+}
+
+body {
+	background-color: #24415D;
+}
+
+.form-signin {
+  max-width: 330px;
+  margin: 0 auto;
+}
+
+#form {
+    padding-left: 400px;
+    margin-top: -130px;
+}
+
+h2 {
+    color: white;
+    font-size: 20px;
+}
+
+#checkbox {
+    float: left;
+    color: gray;
+}
+
+#login {
+    margin-top: 10px;
+    float: right;
+}
+
+#link-button {
+    padding-left: -10px;
+    float: left;
+    color: gray;
+}
