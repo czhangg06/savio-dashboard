@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-	<head>
-		<link rel="stylesheet" href="{% static 'css/notifications.css' %}" type="text/css">
-	</head>
 
-	<body>
-	</body>
+{% block head %}
+	<link rel="stylesheet" href="{% static 'css/notifications.css' %}" type="text/css">
+{% endblock %}
 
-</html>
+{% block body %}
+	<h3>Your Notifications</h3>
+	{% if messages %}
+		<div class="alert alert-danger" id="le-message">
+			{% for m in messages %}
+				<p{% if m.tags %} class="{{ m.tags }}" {% endif %}> {{ m }}</p>
+			{% endfor %}
+		</div>
+	{% endif %}
+{% endblock %}
