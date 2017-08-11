@@ -38,7 +38,7 @@ List of package dependencies / extra components to use this dashboard:
 - [ ] C: su calculator 
 - [ ] C: FAQs (figure out important questions, when to redirect to another page, how to display information)
 - [ ] C: settings (allow update email settings)
-- [ ] C: obtain final json file from other interns 
+- [ ] C: configure with backend API
 - [ ] C: deploy in Pheonix
 
 ## 4. (Cassie's) issues
