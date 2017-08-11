@@ -43,4 +43,4 @@ List of package dependencies / extra components to use this dashboard:
 
 ## 4. (Cassie's) issues
 
-Currently none (other than what I've already told you!)
+Currently none (other than what I've already commmunicated!)
