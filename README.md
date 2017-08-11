@@ -41,6 +41,6 @@ List of package dependencies / extra components to use this dashboard:
 - [ ] C: obtain final json file from other interns 
 - [ ] C: deploy in Pheonix
 
-## 4. Cassie's issues
+## 4. (Cassie's) issues
 
 Currently none (other than what I've already told you!)
