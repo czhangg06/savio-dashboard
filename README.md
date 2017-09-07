@@ -26,7 +26,21 @@ List of package dependencies / extra components to use this dashboard:
 **O** = Oliver
 
 - [ ] O: creates template of how to make *pretty* mouse-over event for text
-- [X] O: adds .gitignore file
-- [ ] C: add LICENSE.txt
+- [ ] O: adds .gitignore file
+- [ ] C: ask about LICENSE.txt  + create
 - [ ] O + C: add requirements.txt
 - [ ] O + C: add setup.py **(? is this part needed ?)**
+
+- [x] C: notification center (getting notif to display, formatting notif, marking read vs. unread)
+- [ ] C: notification center (displaying date, registering when to send)
+- [ ] C: statistics (displaying graphs via d3, smooth transition b/w graphs, formatting job history chart + filters)
+- [ ] C: quota manager (displaying user list, filters, displaying graph)
+- [ ] C: su calculator 
+- [ ] C: FAQs (figure out important questions, when to redirect to another page, how to display information)
+- [ ] C: settings (allow update email settings)
+- [ ] C: configure with backend API
+- [ ] C: deploy in Pheonix
+
+## 4. (Cassie's) issues
+
+Currently none (other than what I've already commmunicated!)
