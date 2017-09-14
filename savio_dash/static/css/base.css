@@ -3,7 +3,7 @@
 	background-image: none;
 	background-repeat: no-repeat;
 	max-height: 70px;
-} 
+}
 
 #title {
 	padding-top: 25px;
@@ -46,7 +46,7 @@
 	padding-top: 73px;
 	text-align: center;
 	height: 100%;
-	width: 80px;
+	width: 120px;
 	font-size: 10px;
 	position: fixed;
 	background-color: #92B4F2;
@@ -98,4 +98,48 @@
 #layer3 {
 	margin-left: -10px;
 	font-size: 16px;
+}
+
+
+/***********************************************************
+ ** Set sidenav appearance
+ ***********************************************************/
+
+.trial-side {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	background-color: #111;
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+}
+
+.trial-side a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+}
+
+.trial-side a:hover {
+	color: #f1f1f1;
+}
+
+.trial-side .closebtn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+	.trial-side {padding-top: 15px;}
+	.trial-side a {font-size: 18px;}
 }

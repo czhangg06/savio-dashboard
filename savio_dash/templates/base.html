@@ -7,7 +7,7 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 	    <meta name="description" content="Notification Center">
 	    <meta name="author" content="Cassie Zhang">
-	    
+
 		<title>{{ theTitle }}</title>
 		<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
 		<link rel="stylesheet" href="{% static 'css/bootstrap-theme.css' %}">
@@ -19,7 +19,48 @@
         {% block head %}
         {% endblock %}
 	</head>
+	<style>
+	.trial-side {
+		height: 45%;
+		width: 0;
+		position: fixed;
+		z-index: 1;
+		top: 0;
+		left: 10px;
+		background-color: rgba(0, 0, 0, 0.9);
+		overflow-x: hidden;
+		transition: 0.5s;
+		padding-top: 60px;
+	}
 
+	.trial-side a {
+		padding: 8px 8px 8px 32px;
+		text-decoration: none;
+		font-size: 25px;
+		color: rgba(255, 255, 255, 0.7);
+		display: block;
+		transition: 0.3s;
+	}
+
+	.trial-side a:hover {
+		color: rgba(255, 255, 255, 0.99);
+	}
+
+	.trial-side .closebtn {
+		position: absolute;
+		top: 0;
+		right: 25px;
+		font-size: 36px;
+		margin-left: 50px;
+		padding-top: 78px;
+	}
+
+	@media screen and (max-height: 450px) {
+		.trial-side {padding-top: 15px;}
+		.trial-side a {font-size: 18px;}
+	}
+
+	</style>
 
 	<body>
 		<nav class="navbar navbar-fixed-top navbar-default" id="navbar">
@@ -48,8 +89,9 @@
 
 	    <div class="sidebar-nav" id="sidebar" >
 	        <ul style="list-style-type: none;">
-	            <li><a href="../notifications"><i class="pe-7s-bell"></i><p>Notifications</a></p></li>
-	            <li><a href="../personal_statistics"><i class="pe-7s-graph2"></i><p>Statistics</a></p></li>
+	            <!--li><a href="#" onclick="openNav()"><i class="pe-7s-bell"></i>Open Sidebar</a></li-->
+	            <li><a href="#" onclick="openNav()"><i class="pe-7s-bell"></i><p>Notifications</a></p></li>
+	            <li><a href="#" onclick="openNav()"><i class="pe-7s-graph2"></i><p>Statistics</a></p></li>
 	            <li><a href="../quota_manager"><i class="pe-7s-users"></i><p>Quota Manager</a></p></li>
 	            <li><a href="../su_calcuator"><i class="pe-7s-calculator"></i><p>SU Calculator</a></p></li>
 	            <li><a href="../faqs"><i class="pe-7s-help1"></i><p>FAQs</a></p></li>
@@ -57,7 +99,7 @@
 	        </ul>
 	    </div>
 
-	    <div class="sidebar-nav" id="sidebar2">
+	    <!--div class="sidebar-nav" id="sidebar2">
 			<li><a href="../notifications">Notification Center</a></li>
 			<li><a href="../personal_statistics">Statistics</a></li>
 			<ul id="layer2">
@@ -75,6 +117,20 @@
 			<li><a href="../su_calculator">SU Calculator</a></li>
 			<li><a href="../faqs">FAQs</a></li>
 			<li><a href="../settings">Settings</a></li>
+		</div-->
+
+		<div id="this-trial-side" class="trial-side" style="margin-left: 100px;">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<br>
+			<a href="../notifications">Notification Center</a>
+			<a href="../personal_statistics">Statistics</a>
+			<a href="../account_statistics">Account Statistics</a>
+			<ul>
+				<li><a href="../account_statistics">SU Usage</a></li>
+				<li><a href="../account_statistics">Num. Jobs Submitted</a></li>
+				<li><a href="../account_statistics">Num. Jobs Ended</a></li>
+				<li><a href="../account_statistics">Jobs by Partition</a></li>
+			</ul>
 		</div>
 
 		<div id="thetitle"><h2>{{ theTitle }} </h2> </div>
@@ -85,17 +141,53 @@
 		</div>
 
 	<script>
+
+		function openNav() {
+			document.getElementById("this-trial-side").style.width = "350px";
+			document.getElementById("this-trial-side").style["margin-left"] = "100px";
+			document.getElementById("this-trial-side").style["padding-top"] = "100px";
+			document.body.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
+		}
+
+		function closeNav() {
+			document.getElementById("this-trial-side").style.width = "0";
+			document.getElementById("this-trial-side").style["margin-left"] = "0";
+			document.getElementById("this-trial-side").style["padding-top"] = "0";
+			document.body.style.backgroundColor = "white";
+		}
+
 		$(document).ready(function(){
 		    $("#sidebar").mouseenter(function () {
-		        $("#sidebar2").stop().toggle().toggleClass("open");
-		    });
+
+				console.log("\nEntering sidebar id\n");
+
+		        /*$("#sidebar2").stop().toggle().toggleClass("open");*/
+		    })
+
 		    $("#sidebar2").mouseenter(function() {
-		    	$(this).animate({
-		    		display: "block"})
+
+				console.log("\nEntering sidebar2 id\n");
+
+		    	/*$(this).animate({
+		    		display: "block"
+				})*/
 		    }).mouseleave(function() {
-		    	if(!$(this).hasClass("open"))
+
+				console.log("\nLeaving sidebar2 id\n");
+
+			/*	if(!$(this).hasClass("open")) {
+
+					console.log("\nhasClass(open)...\n");
+
             		$(this).stop(true, true).animate({
-            			display: "none"})
+            			display: "none"
+					})
+				}
+				else {
+					console.log("\nno hasClass(open)...\n");
+
+					$("#sidebar2").stop().toggle().toggleClass("open");
+				}*/
 		    });
 		});
 	</script>
