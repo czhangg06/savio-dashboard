@@ -21,16 +21,16 @@
 	</head>
 	<style>
 	.trial-side {
-		height: 45%;
+		height: 55%;
 		width: 0;
 		position: fixed;
 		z-index: 1;
-		top: 0;
-		left: 10px;
+		top: 80px;
+		left: 130px;
 		background-color: rgba(0, 0, 0, 0.9);
 		overflow-x: hidden;
 		transition: 0.5s;
-		padding-top: 60px;
+		/*padding-top: 60px;*/
 	}
 
 	.trial-side a {
@@ -52,7 +52,7 @@
 		right: 25px;
 		font-size: 36px;
 		margin-left: 50px;
-		padding-top: 78px;
+		/*padding-top: 78px;*/
 	}
 
 	@media screen and (max-height: 450px) {
@@ -93,7 +93,7 @@
 	            <li><a href="#" onclick="openNav()"><i class="pe-7s-bell"></i><p>Notifications</a></p></li>
 	            <li><a href="#" onclick="openNav()"><i class="pe-7s-graph2"></i><p>Statistics</a></p></li>
 	            <li><a href="../quota_manager"><i class="pe-7s-users"></i><p>Quota Manager</a></p></li>
-	            <li><a href="../su_calcuator"><i class="pe-7s-calculator"></i><p>SU Calculator</a></p></li>
+	            <li><a href="../su_calculator"><i class="pe-7s-calculator"></i><p>SU Calculator</a></p></li>
 	            <li><a href="../faqs"><i class="pe-7s-help1"></i><p>FAQs</a></p></li>
 	            <li><a href="../settings"><i class="pe-7s-settings"></i><p>Settings</a></p></li>
 	        </ul>
@@ -119,7 +119,7 @@
 			<li><a href="../settings">Settings</a></li>
 		</div-->
 
-		<div id="this-trial-side" class="trial-side" style="margin-left: 100px;">
+		<div id="this-trial-side" class="trial-side" style="/*margin-left: 120px;*/">
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 			<br>
 			<a href="../notifications">Notification Center</a>
@@ -144,15 +144,15 @@
 
 		function openNav() {
 			document.getElementById("this-trial-side").style.width = "350px";
-			document.getElementById("this-trial-side").style["margin-left"] = "100px";
-			document.getElementById("this-trial-side").style["padding-top"] = "100px";
+			//document.getElementById("this-trial-side").style["margin-left"] = "120px";
+			//document.getElementById("this-trial-side").style["padding-top"] = "100px";
 			document.body.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
 		}
 
 		function closeNav() {
 			document.getElementById("this-trial-side").style.width = "0";
-			document.getElementById("this-trial-side").style["margin-left"] = "0";
-			document.getElementById("this-trial-side").style["padding-top"] = "0";
+			//document.getElementById("this-trial-side").style["margin-left"] = "0";
+			//document.getElementById("this-trial-side").style["padding-top"] = "0";
 			document.body.style.backgroundColor = "white";
 		}
 
