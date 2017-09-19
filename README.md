@@ -25,8 +25,9 @@ List of package dependencies / extra components to use this dashboard:
 **C** = Cassie
 **O** = Oliver
 
-- [ ] O: creates template of how to make *pretty* mouse-over event for text
-- [ ] O: adds .gitignore file
+- [X] O: creates template of how to make *pretty* mouse-over event for text
+- [X] O: adds .gitignore file
+- [X] O: left-side sidebar / navbar that pops over main body 
 - [ ] C: ask about LICENSE.txt  + create
 - [ ] O + C: add requirements.txt
 - [ ] O + C: add setup.py **(? is this part needed ?)**
@@ -35,7 +36,7 @@ List of package dependencies / extra components to use this dashboard:
 - [ ] C: notification center (displaying date, registering when to send)
 - [ ] C: statistics (displaying graphs via d3, smooth transition b/w graphs, formatting job history chart + filters)
 - [ ] C: quota manager (displaying user list, filters, displaying graph)
-- [ ] C: su calculator 
+- [ ] C: su calculator
 - [ ] C: FAQs (figure out important questions, when to redirect to another page, how to display information)
 - [ ] C: settings (allow update email settings)
 - [ ] C: configure with backend API
