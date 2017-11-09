@@ -106,7 +106,7 @@
  ** Set sidenav appearance
  ***********************************************************/
 
-.trial-side {
+.nav-side {
 	height: 100%;
 	width: 0;
 	position: fixed;
@@ -119,7 +119,7 @@
 	padding-top: 60px;
 }
 
-.trial-side a {
+.nav-side a {
 	padding: 8px 8px 8px 32px;
 	text-decoration: none;
 	font-size: 25px;
@@ -128,11 +128,11 @@
 	transition: 0.3s;
 }
 
-.trial-side a:hover {
+.nav-side a:hover {
 	color: #f1f1f1;
 }
 
-.trial-side .closebtn {
+.nav-side .closebtn {
 	position: absolute;
 	top: 0;
 	right: 25px;
@@ -141,6 +141,6 @@
 }
 
 @media screen and (max-height: 450px) {
-	.trial-side {padding-top: 15px;}
-	.trial-side a {font-size: 18px;}
+	.nav-side {padding-top: 15px;}
+	.nav-side a {font-size: 18px;}
 }

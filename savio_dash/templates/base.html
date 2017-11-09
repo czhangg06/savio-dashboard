@@ -20,8 +20,8 @@
         {% endblock %}
 	</head>
 	<style>
-	.trial-side {
-		height: 55%;
+	.nav-side {
+		height: 75%;
 		width: 0;
 		position: fixed;
 		z-index: 1;
@@ -33,7 +33,7 @@
 		/*padding-top: 60px;*/
 	}
 
-	.trial-side a {
+	.nav-side a {
 		padding: 8px 8px 8px 32px;
 		text-decoration: none;
 		font-size: 25px;
@@ -42,11 +42,11 @@
 		transition: 0.3s;
 	}
 
-	.trial-side a:hover {
+	.nav-side a:hover {
 		color: rgba(255, 255, 255, 0.99);
 	}
 
-	.trial-side .closebtn {
+	.nav-side .closebtn {
 		position: absolute;
 		top: 0;
 		right: 25px;
@@ -56,8 +56,8 @@
 	}
 
 	@media screen and (max-height: 450px) {
-		.trial-side {padding-top: 15px;}
-		.trial-side a {font-size: 18px;}
+		.nav-side {padding-top: 15px;}
+		.nav-side a {font-size: 18px;}
 	}
 
 	</style>
@@ -86,19 +86,20 @@
 				</ul>
 			</div>
 		</nav>
-
 	    <div class="sidebar-nav" id="sidebar" >
+			<!-- Version 1: All options click to open Nav --> 
 	        <ul style="list-style-type: none;">
-	            <!--li><a href="#" onclick="openNav()"><i class="pe-7s-bell"></i>Open Sidebar</a></li-->
-	            <li><a href="#" onclick="openNav()"><i class="pe-7s-bell"></i><p>Notifications</a></p></li>
-	            <li><a href="#" onclick="openNav()"><i class="pe-7s-graph2"></i><p>Statistics</a></p></li>
+	            <li><a href="#" onclick="openNav()"><i class="pe-7s-menu"></i><p>Open Navigation</a></p></li>
+	            <li><a href="../notifications"><i class="pe-7s-bell"></i><p>Notifications</a></p></li>
+	            <li><a href="../personal_statistics"><i class="pe-7s-graph2"></i><p>Statistics</a></p></li>
 	            <li><a href="../quota_manager"><i class="pe-7s-users"></i><p>Quota Manager</a></p></li>
 	            <li><a href="../su_calculator"><i class="pe-7s-calculator"></i><p>SU Calculator</a></p></li>
 	            <li><a href="../faqs"><i class="pe-7s-help1"></i><p>FAQs</a></p></li>
 	            <li><a href="../settings"><i class="pe-7s-settings"></i><p>Settings</a></p></li>
-	        </ul>
-	    </div>
-
+			</ul>
+			
+			<!-- Version 2: All options click to open Nav --> 
+		</div>
 	    <!--div class="sidebar-nav" id="sidebar2">
 			<li><a href="../notifications">Notification Center</a></li>
 			<li><a href="../personal_statistics">Statistics</a></li>
@@ -119,18 +120,60 @@
 			<li><a href="../settings">Settings</a></li>
 		</div-->
 
-		<div id="this-trial-side" class="trial-side" style="/*margin-left: 120px;*/">
+		<!-- Nav menu for admins -->
+		<div id="id-admin-side" class="nav-side" style="/*margin-left: 120px;*/">
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 			<br>
 			<a href="../notifications">Notification Center</a>
-			<a href="../personal_statistics">Statistics</a>
-			<a href="../account_statistics">Account Statistics</a>
+			<a href="javascript:void(0)">Statistics</a>
+			<ul>
+				<li><a href="../personal_statistics">Personal Statistics</a></li>
+				<li><a href="../account_statistics">Account Statistics</a></li>
+				<ul>
+					<li><a href="../account_statistics">SU Usage</a></li>
+					<li><a href="../account_statistics">Num. Jobs Submit</a></li>
+					<li><a href="../account_statistics">Num. Jobs Ended</a></li>
+					<li><a href="../account_statistics">Jobs by Partition</a></li>
+				</ul>
+				<li><a href="#">Job History</a></li>
+			</ul>
+			<a href="../quota_manager">Quota Manager</a>
+			<a href="../su_calculator">SU Calculator</a>
+			<a href="../faqs">FAQs</a>
+			<a href="../settings">Settings</a>
+		</div>
+
+		<!-- Nav menu for users -->
+		<div id="id-user-side" class="nav-side" style="/*margin-left: 120px;*/">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<br>
+			<a href="../notifications">Notification Center</a>
+			<a href="javascript:void(0)">Statistics</a>
+			<ul>
+				<li><a href="../personal_statistics">Personal Statistics</a></li>
+				<li><a href="#">Job History</a></li>
+			</ul>
+			<a href="../su_calculator">SU Calculator</a>
+			<a href="../faqs">FAQs</a>
+			<a href="../settings">Settings</a>
+		</div>
+
+		<!-- Nav menu for superusers -->
+		<div id="id-super-side" class="nav-side" style="/*margin-left: 120px;*/">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<br>
+			<a href="../notifications">Notification Center</a>
+			<a href="javascript:void(0)">Statistics</a>
 			<ul>
 				<li><a href="../account_statistics">SU Usage</a></li>
-				<li><a href="../account_statistics">Num. Jobs Submitted</a></li>
+				<li><a href="../account_statistics">Num. Jobs Submit</a></li>
 				<li><a href="../account_statistics">Num. Jobs Ended</a></li>
 				<li><a href="../account_statistics">Jobs by Partition</a></li>
 			</ul>
+			<a href="../quota_manager">Quota Manager</a>
+			<a href="../su_calculator">SU Calculator</a>
+			<a href="../faqs">FAQs</a>
+			<a href="../settings">Settings</a>
 		</div>
 
 		<div id="thetitle"><h2>{{ theTitle }} </h2> </div>
@@ -143,16 +186,12 @@
 	<script>
 
 		function openNav() {
-			document.getElementById("this-trial-side").style.width = "350px";
-			//document.getElementById("this-trial-side").style["margin-left"] = "120px";
-			//document.getElementById("this-trial-side").style["padding-top"] = "100px";
+			document.getElementById("id-admin-side").style.width = "350px";
 			document.body.style.backgroundColor = "rgba(0, 0, 0, 0.4)";
 		}
 
 		function closeNav() {
-			document.getElementById("this-trial-side").style.width = "0";
-			//document.getElementById("this-trial-side").style["margin-left"] = "0";
-			//document.getElementById("this-trial-side").style["padding-top"] = "0";
+			document.getElementById("id-admin-side").style.width = "0";
 			document.body.style.backgroundColor = "white";
 		}
 
